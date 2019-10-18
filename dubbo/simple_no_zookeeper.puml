@@ -1,8 +1,18 @@
 @startuml
 
+provider -[#red]\ zookeeper : 注册地址
+
+consumer -[#red]\ zookeeper : 请求地址列表，注册监听
+
+consumer \-[#red] zookeeper : 返回地址列表
+
+...
+
+== 负载均衡 ==
+
 consumer -[#red]\ provider : 远程调用请求
 
-... 负载均衡，默认失败重试2次 ...
+... 默认失败重试2次 ...
 
 consumer /[#blue]- provider : 响应
 
