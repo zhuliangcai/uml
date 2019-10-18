@@ -1,14 +1,19 @@
 @startuml
 
 provider -[#red]\ zookeeper : 注册地址
-
+note right of provider
+ 集群注册
+end note
 consumer -[#red]\ zookeeper : 请求地址列表，注册监听
 
 consumer \-[#red] zookeeper : 返回地址列表
 
 ...
 
-== 负载均衡 ==
+note left of consumer
+ 负载均衡
+ 默认按权重随机
+end note
 
 consumer -[#red]\ provider : 远程调用请求
 
