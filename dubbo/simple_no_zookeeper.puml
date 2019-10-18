@@ -1,0 +1,9 @@
+@startuml
+
+consumer -[#red]\ provider : 远程调用请求
+
+... 负载均衡，默认失败重试2次 ...
+
+consumer /[#blue]- provider : 响应
+
+@enduml

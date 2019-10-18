@@ -2,6 +2,7 @@
 Bob ->x Alice
 Bob -> Alice
 Bob ->> Alice
+Bob \- Alice
 Bob -\ Alice
 Bob \\- Alice
 Bob //-- Alice
