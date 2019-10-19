@@ -1,13 +1,19 @@
 @startuml
 
 
-(zookeeper) <--> (consumer)
+rectangle consumer
+rectangle provider
+rectangle zookeeper
+rectangle dubboAdmin
 
-(zookeeper) <-- (provider)
+consumer -up-> zookeeper :监听消费
+provider -up-> zookeeper :注册
 
-(zookeeper) --> (dubbo-admin)
+consumer -> provider :远程调用
 
-(consumer) --> (provider)
+dubboAdmin -do-> zookeeper :监听
+
+
 
 
 
