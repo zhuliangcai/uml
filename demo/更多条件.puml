@@ -1,0 +1,21 @@
+@startuml
+
+start
+
+if (condition A) then (yes)
+ :情况1;
+elseif  (condition B) then (yes)
+:情况2;
+stop
+elseif  (condition B) then (yes)
+:情况2;
+elseif  (condition B) then (yes)
+:情况2;
+else (nothing)
+:其他情况;
+endif
+
+
+stop
+
+@enduml

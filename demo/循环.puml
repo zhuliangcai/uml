@@ -1,0 +1,57 @@
+@startuml
+
+
+partition repeatwhile循环 {
+
+start
+repeat
+:read data;
+:generate diagrams;
+repeat while (条件?)
+stop
+
+}
+
+partition while循环 {
+
+start
+while (条件?)
+:read data;
+:generate diagrams;
+endwhile
+stop
+
+}
+
+partition 其他while循环 {
+
+start
+while (条件?) is(not empty)
+:read file;
+:generate diagrams;
+endwhile (empty)
+:close file;
+stop
+
+}
+
+
+partition 标签 {
+
+start
+if (条件?) then(yes)
+fork
+:分支1;
+fork again
+:分支2;
+end fork
+else(no)
+:步骤1;
+:步骤2;
+endif
+
+stop
+
+}
+
+@enduml

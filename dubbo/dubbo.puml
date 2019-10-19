@@ -1,0 +1,14 @@
+@startuml
+
+
+(zookeeper) <--> (consumer)
+
+(zookeeper) <-- (provider)
+
+(zookeeper) --> (dubbo-admin)
+
+(consumer) --> (provider)
+
+
+
+@enduml

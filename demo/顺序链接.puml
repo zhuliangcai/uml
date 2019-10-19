@@ -1,0 +1,7 @@
+@startuml
+
+:Hello world;
+:This is ondefined on
+serveral **line**;
+
+@enduml
