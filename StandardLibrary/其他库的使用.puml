@@ -1,0 +1,41 @@
+@startuml
+
+!define SPRITESURL F:\git\uml\cicon-plantuml-sprites\sprites
+
+!includeurl SPRITESURL/tomcat.puml
+!includeurl SPRITESURL/kafka.puml
+!includeurl SPRITESURL/java.puml
+!includeurl SPRITESURL/cassandra.puml
+
+
+title Cloudinsight sprites example
+
+skinparam monochrome true
+
+rectangle "<$tomcat>\nwebapp" as webapp
+queue "<$kafka>\nkafka" as kafka
+rectangle "<$java>\ndaemon" as daemon
+database "<$cassandra>\ncassandra" as cassandra
+
+webapp -> kafka
+kafka -> daemon
+daemon --> cassandra
+
+kafka-> cassandra
+
+!includeurl SPRITESURL/aliyun.puml
+cloud "<$aliyun>\naliyun" as aliyun
+
+
+
+!includeurl SPRITESURL/server.puml
+archimate #Technology "<$server>\nserver" as server
+
+!includeurl SPRITESURL/linux.puml
+node "<$linux>\nlinux" as linux
+'object "<$linux>\nlinux" as linux
+
+aliyun -> server
+server -> linux
+
+@enduml
